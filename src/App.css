@@ -1,0 +1,618 @@
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #22b946;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#642bff, #ff22e6);
+}
+
+
+/* Currently not added this image on webpage */
+.externalBackgroundImage {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('./assets/image/home/bgImg.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+
+/* Home -> div -> div -> div -> div => Added style on button  */
+.homeBtnHover {
+    color: black;
+    background-color: skyblue;
+    border: 2px solid skyblue;
+}
+
+.homeBtnHover:hover {
+    color: white;
+    background-color: #171c28;
+    border: 2px solid white;
+}
+
+
+/* About page */
+.aboutLargeIcons {
+    height: 140px;
+    width: 200px;
+    box-shadow: rgba(114, 37, 208, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.aboutLargeIcons:hover {
+    border: 1px solid blueviolet;
+    transition-duration: 0.5s;
+}
+
+.aboutLargeIcons i {
+    font-size: 3rem;
+}
+
+.aboutHeading:hover {
+    border-bottom: 1px solid white;
+    transition-duration: 0.5s;
+}
+
+
+/* Education */
+.education-certificate-heading {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-family: Sedan SC, serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.education-certificate-heading::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.education-certificate-heading:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.education-certificate-heading:hover {
+
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+
+.educationCertificates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(5, 55, 129);
+    opacity: 0.7;
+    height: 13rem;
+    width: 20rem;
+}
+
+.educationCertificates img {
+    height: 5rem;
+    width: 16rem;
+}
+
+.educationCertificates div {
+    display: none;
+}
+
+.educationCertificates:hover div {
+    display: flex;
+    opacity: 1;
+}
+
+.educationCertificates:hover {
+    opacity: 0.2;
+}
+
+
+
+/* Project Page */
+
+.project-card:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(60, 55, 102, 0.3) 0px 30px 60px -30px, rgba(68, 140, 212, 0.35) 0px -2px 6px 0px inset;
+    background-color: rgb(1 32 38);
+}
+
+
+/* Experience Page */
+.experience-title {
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    width: max-content;
+}
+
+.highlight {
+    color: #8f4ccc;
+}
+
+.experience-container {
+    margin: 10px 0;
+    border: 1px solid #8f4ccc;
+    border-radius: 8px;
+    background: rgba(143, 76, 204, 0.1);
+    /* Light background for highlighting */
+}
+
+.experience-header {
+    background: linear-gradient(90deg, rgba(36, 198, 220, 1) 0%, rgba(81, 74, 157, 1) 100%);
+    border-radius: 8px 8px 0 0;
+}
+
+.experience-header .company-name {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.experience-details {
+    border-top: 1px solid #8f4ccc;
+    border-radius: 0 0 8px 8px;
+    background-color: #f8f9fa;
+    list-style-type: none;
+    padding-left: 20px;
+    color: #333;
+}
+
+.experience-details li {
+    margin-bottom: 10px;
+}
+
+.experience-details li strong {
+    color: #8f4ccc;
+}
+
+.experience-header h3,
+.experience-header h5,
+.experience-header p {
+    margin: 0;
+    color: white;
+}
+
+
+/* Project Card */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 350px;
+    perspective: 1000px;
+    margin-bottom: 15px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(163, 162, 162, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: black;
+    color: #bbb;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.flip-card-back-links {
+    display: flex;
+    gap: 15px;
+    margin: 5px 0;
+}
+
+.flip-card-back-links a {
+    background-color: whitesmoke;
+    border-radius: 50%;
+    color: black;
+    height: max-content;
+}
+
+.flip-card-back-links a:hover {
+    color: whitesmoke;
+    background-color: black;
+    transition: 0.2s ease-in-out;
+}
+
+
+
+/* Contact Page */
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(36, 11, 54, 0.8), rgba(195, 20, 50, 0.9)), url("https://i.imgur.com/3vacZxN.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.contact-header {
+    font-family: "Montserrat", sans-serif;
+    margin: 10rem 10rem 3rem 10rem;
+    text-align: center;
+}
+
+#co-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #c31432;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#co-text {
+    font-size: 3rem;
+    color: white;
+    padding-bottom: 2rem;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    line-height: 2;
+    height: auto;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8.8rem;
+}
+
+.contact-form {
+    font-family: "Montserrat", sans-serif;
+    padding: 5rem;
+}
+
+#form-title {
+    color: #fff;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    line-height: 1px;
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+}
+
+fieldset {
+    border: none;
+}
+
+.form-field {
+    outline: none;
+    width: 200%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    margin-bottom: .9rem;
+}
+
+#name,
+#email,
+#subject,
+#message {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    outline: none;
+    background: transparent;
+    border: none;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-bottom: 0.7rem;
+}
+
+textarea,
+#message {
+    width: 100%;
+    color: #fff;
+    overflow: visible;
+}
+
+#form-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    border: none;
+    color: white;
+    font-size: 0.6rem;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 200%;
+    height: 60px;
+    background-color: #c31432;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#form-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2.5%);
+    box-shadow: 0 0 15px 0 #000;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.contact-info h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: #c31432;
+}
+
+.contact-info a {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    line-height: 3rem;
+    margin-bottom: 5rem;
+    transition: all .3s ease;
+}
+
+.contact-info a:hover {
+    transform: translateY(-2.5%);
+    color: #999;
+}
+
+.contact-info .fab {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding-left: 2rem;
+    color: #666;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.fab:hover {
+    transform: scale(1.2);
+    color: #999;
+}
+
+
+@media screen and (max-width: 960px) {
+    .contact-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-field {
+        width: 100%;
+    }
+
+    #form-btn {
+        width: 100%;
+    }
+
+    #form-title {
+        margin: 3rem auto;
+    }
+
+    .contact-header {
+        margin: 5rem 5rem 3rem 5rem;
+    }
+
+    #co-title {
+        font-size: 1rem;
+    }
+
+    #co-text {
+        font-size: 2.5rem;
+    }
+
+    .contact-form {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .form-field {
+        width: 125%;
+    }
+
+    #form-title {
+        margin: 3rem auto;
+    }
+
+    #form-btn {
+        width: 125%;
+    }
+
+    .contact-header {
+        margin: 5rem 5rem 3rem 5rem;
+    }
+
+    .contact-info {
+        padding: 5rem;
+    }
+
+    #co-title {
+        font-size: 1rem;
+    }
+
+    #co-text {
+        font-size: 2.5rem;
+    }
+
+    .contact-form {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 1460px) {
+    .form-field {
+        width: 200%;
+    }
+
+    #form-btn {
+        width: 200%;
+    }
+}
+
+
+/* Contact Page back button */
+/* CSS */
+.button-78 {
+    align-items: center;
+    appearance: none;
+    background-clip: padding-box;
+    background-color: initial;
+    background-image: none;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: Eina01,sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    justify-content: center;
+    line-height: 24px;
+    margin: 0;
+    min-height: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 19px 26px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: auto;
+    word-break: keep-all;
+    z-index: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .button-78 {
+      padding: 19px 32px;
+    }
+  }
+  
+  .button-78:before,
+  .button-78:after {
+    border-radius: 80px;
+  }
+  
+  .button-78:before {
+    background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+  }
+  
+  .button-78:after {
+    background-color: initial;
+    background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+    bottom: 4px;
+    content: "";
+    display: block;
+    left: 4px;
+    overflow: hidden;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    transition: all 100ms ease-out;
+    z-index: -1;
+  }
+  
+  .button-78:hover:not(:disabled):before {
+    background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
+  }
+  
+  .button-78:hover:not(:disabled):after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  
+  .button-78:active:not(:disabled) {
+    color: #ccc;
+  }
+  
+  .button-78:active:not(:disabled):before {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  }
+  
+  .button-78:active:not(:disabled):after {
+    background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+  }
+  
+  .button-78:disabled {
+    cursor: default;
+    opacity: .24;
+  }
